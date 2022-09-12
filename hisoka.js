@@ -3737,7 +3737,7 @@ let capt = `⭔ Title: ${judul}
 //////pln
 case 'plntagihantegalngandong':
 {
-  //try{
+  try{
 reply('Sedang Mengumpulkan Data & Menjumlahkan...')
 const a = await fetchJson(`https://api.lolhuman.xyz/api/tagihanlistrik/524041095729?apikey=${lolapi}`)
 const b = await fetchJson(`https://api.lolhuman.xyz/api/tagihanlistrik/524042004164?apikey=${lolapi}`)
@@ -3885,10 +3885,10 @@ const teks = `*Tagihan Listrik Tegal Ngandong*
 
 
 Total : *${total}*`
-m.reply(teks)
-  //}catch{
-    //m.reply(`Tagihan Terpantau Sudah Dibayarkan...`)
-  //}
+reply(teks)
+  }catch{
+    reply(`Tagihan Terpantau Sudah Dibayarkan...`)
+  }
 }
 break
 

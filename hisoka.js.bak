@@ -20,6 +20,7 @@ const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const lolapi = 'ardanfajars'
+const mathjs = require('mathjs')
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins, isbloke } = require('./lib/myfunc')
 
 // read database
