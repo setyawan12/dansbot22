@@ -2249,7 +2249,7 @@ case 'bitly': {
 			
 			case 'alaudio':
 {
-if(!text) return m.reply(`Hai Kak ${Pushname}, Harap Makukan Surat Yang Ingin dicari...!`)
+if(!text) return m.reply(`Hai Kak ${pushname}, Harap Makukan Surat Yang Ingin dicari...!`)
 try{
 ayat = "ayat"
 					bhs = ""
