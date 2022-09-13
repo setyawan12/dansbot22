@@ -2088,6 +2088,24 @@ break
 			//////////////////////////////end sistem
 			
 			///////////////free
+			case 'heker2': {
+                m.reply(`Memproses...`)
+		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+                let media = await hisoka.downloadAndSaveMediaMessage(qmsg)
+                    let anu = await TelegraPh(media)
+                    await hisoka.sendImage(m.chat, `https://api.akuari.my.id/canvas/hacker2?link=${anu}`, `Nih Kak`, m) 
+                await fs.unlinkSync(media)
+            }
+            break
+			case 'heker': {
+                m.reply(`Memproses...`)
+		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+                let media = await hisoka.downloadAndSaveMediaMessage(qmsg)
+                    let anu = await TelegraPh(media)
+                    await hisoka.sendImage(m.chat, `https://api.akuari.my.id/canvas/hacker?link=${anu}`, `Nih Kak`, m) 
+                await fs.unlinkSync(media)
+            }
+            break
 			case 'cakapdans':{
 				reply(text)
 			}
