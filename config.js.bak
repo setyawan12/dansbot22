@@ -19,7 +19,7 @@ global.APIKeys = {
 
 // Other
 global.owner = ['79772977134', '6281215389681']
-global.pemilik = ['79772977134'] //another owner number
+global.pemilik = ['6281218443390'] //another owner number
 global.premium = ['6281215389681'] //premium number
 global.pengguna = 'Dans' //username
 global.botnma = 'Dans' //bot name
