@@ -3959,7 +3959,7 @@ break
             case 'list': case 'menu': case 'help': case '?': {
 				timestampe = speed();
 latensie = speed() - timestampe
-                anu = `Hi 🤚 ${pushname}, How Are You?
+                anu = `Hai 🤚 *${pushname}*, ${ucapanWaktus}...
   
 ┏━━━━━━━━━━━━━✨━━┓
  「 INFO BOT 」

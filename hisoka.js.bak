@@ -129,6 +129,46 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
             hisoka.readMessages([m.key])
             console.log(chalk.black(chalk.bgWhite('[ PESAN ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> Dari'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> Di'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
         }
+	//timessss
+	
+	const time2a = moment().tz("Asia/Jakarta").format("HH:mm:ss");
+if (time2a < "24:59:00") {
+  var ucapanWaktus = "Selamat malam";
+}
+if (time2a < "19:00:00") {
+  var ucapanWaktus = "Selamat senja🌞";
+}
+if (time2a < "18:00:00") {
+  var ucapanWaktus = "Selamat sore🌄";
+}
+if (time2a < "15:00:00") {
+  var ucapanWaktus = "Selamat siang☀️";
+}
+if (time2a < "11:00:00") {
+  var ucapanWaktus = "Selamat pagi🌅";
+}
+if (time2a < "05:00:00") {
+  var ucapanWaktus = "Selamat malam🌃";
+}
+let locale = "id";
+
+let dhate = new Date();
+let datex = dhate.toLocaleDateString(locale, {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+let datexxx = dhate.toLocaleDateString(locale, {
+  day: "numeric",
+  month: "numeric",
+  year: "numeric",
+});
+let gmt = new Date(0).getTime() - new Date("1 January 1970").getTime();
+let week = dhate.toLocaleDateString(locale, { weekday: "long" });
+let weton = ["Pahing", "Pon", "Wage", "Kliwon", "Legi"][
+  Math.floor((dhate * 1 + gmt) / 84600000) % 5
+];
+const jam = moment.tz('Asia/Jakarta').format('HH:mm')
 	//send
 	
 	const reply = (teks) => {
@@ -3921,24 +3961,31 @@ break
 latensie = speed() - timestampe
                 anu = `Hi 🤚 ${pushname}, How Are You?
   
-  ❏「 INFO BOT 」
-𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botnma}
-𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownernma}
-𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner[0]}
-𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : DansBotPC
-𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
+┏━━━━━━━━━━━━━✨━━┓
+ 「 INFO BOT 」
+*Speed* : ${latensie.toFixed(4)} miliseconds
+*Runtime* : ${runtime(process.uptime())}
+*Bot Name* : ${global.botnma}
+*Owner Name* : ${global.ownernma}
+*Owner Number* : ${global.owner[0]}
+*Host Name* : DansBotPC
+*platform* : ${os.platform()}
+*Jam* : ${jam}
+*Hari* : ${week} ${weton}
+*Tanggal* : ${datex}
+Donasi Yuk https://saweria.co/ardhans
+┗━━✨━━━━━━━━━━━━━┛
 
+┏━━━━━━━━━━━━━✨━━┓
 ❏「 SOCIAL MEDIA 」
 IG = https://www.instagram.com/afs_bot/
  
 ❏「 DANS OTP 」
 Terima Jasa OTP All Aplikasi
 info? wa.me/${global.owner[0]}
-  
-  *Menu*
-				
+┗━━✨━━━━━━━━━━━━━┛ 
+
+  *Menu*				
 				
 ┌──⭓ *Group Menu*
 │
