@@ -3578,7 +3578,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'owner': case 'creator': {
-                hisoka.sendContact(m.chat, global.owner, m)
+                hisoka.sendContact(m.chat, global.owner[0], m)
             }
             break
             case 'playstore': {
