@@ -3970,6 +3970,7 @@ latensie = speed() - timestampe
 *Owner Number* : ${global.owner[0]}
 *Host Name* : DansBotPC
 *platform* : ${os.platform()}
+
 *Jam* : ${jam}
 *Hari* : ${week} ${weton}
 *Tanggal* : ${datex}

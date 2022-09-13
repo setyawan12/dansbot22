@@ -1263,13 +1263,18 @@ break
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Instsgram',
+                                    displayText: 'Instagram',
                                     url: 'https://instagram.com/afs_bot'
                                 }
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 88'
+                                    phoneNumber: '+79772977134'
+                                }
+                            },{
+                                quickReplyButton: {
+                                    displayText: 'Menu Bot',
+                                    id: 'menu'
                                 }
                             }, {
                                 quickReplyButton: {
