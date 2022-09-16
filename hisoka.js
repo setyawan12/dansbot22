@@ -2177,12 +2177,12 @@ case 'santuy':
 ////////////////////////////education
 
 case 'bagi':{
-				if (!text) return reply(`Example : ${prefix + command} 10:2`)
+				if (!text) return reply(`Example : ${prefix + command} 10/2`)
 				let [teks1, teks2] = text.split`:`
-				if (!teks1) return reply(`Example : ${prefix + command} 10:2`)
-				if (!teks2) return reply(`Example : ${prefix + command} 10:2`)
+				if (!teks1) return reply(`Example : ${prefix + command} 10/2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10/2`)
 				//const a = await fetchJson(`https://api.akuari.my.id/edukasi/bagi?angka1=${teks1}&angka2=${teks2}`)
-				const agz = `${teks1}:${teks2}`
+				const agz = `${teks1}/${teks2}`
 				const za = mathjs.evaluate(agz)
 				teks122 = `*PEMBAGIAN*\n\n${agz}=${za}`
 				reply(teks122)
