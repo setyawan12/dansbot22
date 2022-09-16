@@ -2161,7 +2161,6 @@ case 'carigc': {
 			
 			
 ///////////////asupan
-hisoka.sendFileUrl(m.chat, media, `Download Url Instagram From ${isUrl(text)[0]}`, m)
 
 case 'bocil':
 case 'ukhty':

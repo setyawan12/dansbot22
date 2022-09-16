@@ -2220,6 +2220,7 @@ case 'kurang':{
 				const a = await fetchJson(`https://api.akuari.my.id/edukasi/kurang?angka1=${teks1}&angka2=${teks2}`)
 				teks122 = `*PENGURANGAN*\n\n${a.soal}\n=${a.hasil}`
 				reply(teks122)
+}
 			break
 			
 case 'pangkat':{
@@ -2229,6 +2230,7 @@ case 'pangkat':{
 				const a = await fetchJson(`https://api.akuari.my.id/edukasi/pangkat?angka=${args[0]}&pangkat=${args[1]}`)
 				teks122 = `*PANGKAT*\n\n${a.soal}\n=${a.hasil}`
 				reply(teks122)
+}
 			break
 
 case 'akar':{
@@ -2236,6 +2238,7 @@ case 'akar':{
 				const a = await fetchJson(`https://api.akuari.my.id/edukasi/akar?angka=${text}`)
 				teks122 = `*AKAR KUADRAT*\n\n${a.soal}\n=${a.hasil}`
 				reply(teks122)
+}
 			break
 			
 			case 'merdekanews': {
