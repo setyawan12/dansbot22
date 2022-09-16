@@ -4287,9 +4287,6 @@ info? wa.me/${global.owner[0]}
 │⭔ ${prefix}husbu
 │⭔ ${prefix}neko
 │⭔ ${prefix}shinobu
-│⭔ ${prefix}cecan
-│⭔ ${prefix}cogan
-│⭔ ${prefix}cecanhijab
 │
 └───────⭓
 
