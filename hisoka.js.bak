@@ -2133,6 +2133,112 @@ break
 			//////////////////////////////end sistem
 			
 			///////////////free
+			
+			case 'sfile': {
+			if (!text) return reply(`Example : ${prefix + command} joox`)
+            let res = await fetchJson(`https://api.akuari.my.id/search/sfilesearch?query=${text}`)
+            let teks = `⭔ *SFILE SEARCH*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Nama : ${i.nama}\n`
+			teks += `⭔ Ukuran : ${i.size}\n`
+            teks += `⭔ Link : ${i.link}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'carigc': {
+			if (!text) return reply(`Example : ${prefix + command} bot`)
+            let res = await fetchJson(`https://api.akuari.my.id/search/carigc?query=${text}`)
+            let teks = `⭔ *CARI GC WHATSAPP*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Nama : ${i.nama}\n`
+            teks += `⭔ Link : ${i.link}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+			
+///////////////asupan
+hisoka.sendFileUrl(m.chat, media, `Download Url Instagram From ${isUrl(text)[0]}`, m)
+
+case 'bocil':
+case 'ukhty':
+case 'ghea':
+case 'santuy':
+          try {
+			anu = await fetchJson(`https://api.akuari.my.id/asupan/${command}`)
+			hisoka.sendFileUrl(m.chat, anu.respon, `Nih Kak`, m)
+          } catch {
+            m.reply(`Yah... Ada Yang Error Nih.`)
+          }
+          break
+		  
+////////////////////////////education
+
+case 'bagi':{
+				if (!text) return reply(`Example : ${prefix + command} 10:2`)
+				let [teks1, teks2] = text.split`|`
+				if (!teks1) return reply(`Example : ${prefix + command} 10:2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10:2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/bagi?angka1=${teks1}&angka2=${teks2}`)
+				teks122 = `*PEMBAGIAN*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+				
+			}
+			break
+			
+case 'tambah':{
+				if (!text) return reply(`Example : ${prefix + command} 10+2`)
+				let [teks1, teks2] = text.split`+`
+				if (!teks1) return reply(`Example : ${prefix + command} 10+2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10+2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/tambah?angka1=${teks1}&angka2=${teks2}`)
+				teks122 = `*PENJUMLAHAN*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+				
+			}
+			break
+			
+case 'kali':{
+				if (!text) return reply(`Example : ${prefix + command} 10x2`)
+				let [teks1, teks2] = text.split`x`
+				if (!teks1) return reply(`Example : ${prefix + command} 10x2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10x2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/kali?angka1=${teks1}&angka2=${teks2}`)
+				teks122 = `*PERKALIAN*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+				
+			}
+			break
+			
+case 'kurang':{
+				if (!text) return reply(`Example : ${prefix + command} 10-2`)
+				let [teks1, teks2] = text.split`-`
+				if (!teks1) return reply(`Example : ${prefix + command} 10-2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10-2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/kurang?angka1=${teks1}&angka2=${teks2}`)
+				teks122 = `*PENGURANGAN*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+			break
+			
+case 'pangkat':{
+				if (!text) return reply(`Example : ${prefix + command} 10 2`)
+				if (!args[0]) return reply(`Example : ${prefix + command} 10 2`)
+				if (!args[1]) return reply(`Example : ${prefix + command} 10 2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/pangkat?angka=${args[0]}&pangkat=${args[1]}`)
+				teks122 = `*PANGKAT*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+			break
+
+case 'akar':{
+				if (!text) return reply(`Example : ${prefix + command} 25`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/akar?angka=${text}`)
+				teks122 = `*AKAR KUADRAT*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+			break
+			
 			case 'merdekanews': {
             let res = await fetchJson(`https://api.akuari.my.id/info/merdeka`)
             let teks = `⭔ *MERDEKA NEWS*\n\n`
