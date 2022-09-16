@@ -2178,11 +2178,13 @@ case 'santuy':
 
 case 'bagi':{
 				if (!text) return reply(`Example : ${prefix + command} 10:2`)
-				let [teks1, teks2] = text.split`|`
+				let [teks1, teks2] = text.split`:`
 				if (!teks1) return reply(`Example : ${prefix + command} 10:2`)
 				if (!teks2) return reply(`Example : ${prefix + command} 10:2`)
-				const a = await fetchJson(`https://api.akuari.my.id/edukasi/bagi?angka1=${teks1}&angka2=${teks2}`)
-				teks122 = `*PEMBAGIAN*\n\n${a.soal}\n=${a.hasil}`
+				//const a = await fetchJson(`https://api.akuari.my.id/edukasi/bagi?angka1=${teks1}&angka2=${teks2}`)
+				const agz = `${teks1}:${teks2}`
+				const za = mathjs.evaluate(agz)
+				teks122 = `*PEMBAGIAN*\n\n${agz}=${za}`
 				reply(teks122)
 				
 			}
@@ -2193,20 +2195,24 @@ case 'tambah':{
 				let [teks1, teks2] = text.split`+`
 				if (!teks1) return reply(`Example : ${prefix + command} 10+2`)
 				if (!teks2) return reply(`Example : ${prefix + command} 10+2`)
-				const a = await fetchJson(`https://api.akuari.my.id/edukasi/tambah?angka1=${teks1}&angka2=${teks2}`)
-				teks122 = `*PENJUMLAHAN*\n\n${a.soal}\n=${a.hasil}`
+				//const a = await fetchJson(`https://api.akuari.my.id/edukasi/tambah?angka1=${teks1}&angka2=${teks2}`)
+				const agz = `${teks1}+${teks2}`
+				const za = mathjs.evaluate(agz)
+				teks122 = `*PENJUMLAHAN*\n\n${agz}=${za}`
 				reply(teks122)
 				
 			}
 			break
 			
 case 'kali':{
-				if (!text) return reply(`Example : ${prefix + command} 10x2`)
-				let [teks1, teks2] = text.split`x`
-				if (!teks1) return reply(`Example : ${prefix + command} 10x2`)
-				if (!teks2) return reply(`Example : ${prefix + command} 10x2`)
-				const a = await fetchJson(`https://api.akuari.my.id/edukasi/kali?angka1=${teks1}&angka2=${teks2}`)
-				teks122 = `*PERKALIAN*\n\n${a.soal}\n=${a.hasil}`
+				if (!text) return reply(`Example : ${prefix + command} 10*2`)
+				let [teks1, teks2] = text.split`*`
+				if (!teks1) return reply(`Example : ${prefix + command} 10*2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10*2`)
+				//const a = await fetchJson(`https://api.akuari.my.id/edukasi/kali?angka1=${teks1}&angka2=${teks2}`)
+				const agz = `${teks1}*${teks2}`
+				const za = mathjs.evaluate(agz)
+				teks122 = `*PERKALIAN*\n\n${agz}=${za}`
 				reply(teks122)
 				
 			}
@@ -2217,8 +2223,10 @@ case 'kurang':{
 				let [teks1, teks2] = text.split`-`
 				if (!teks1) return reply(`Example : ${prefix + command} 10-2`)
 				if (!teks2) return reply(`Example : ${prefix + command} 10-2`)
-				const a = await fetchJson(`https://api.akuari.my.id/edukasi/kurang?angka1=${teks1}&angka2=${teks2}`)
-				teks122 = `*PENGURANGAN*\n\n${a.soal}\n=${a.hasil}`
+				//const a = await fetchJson(`https://api.akuari.my.id/edukasi/kurang?angka1=${teks1}&angka2=${teks2}`)
+			const agz = `${teks1}-${teks2}`
+				const za = mathjs.evaluate(agz)
+				teks122 = `*PENGURANGAN*\n\n${agz}=${za}`
 				reply(teks122)
 }
 			break
@@ -2255,12 +2263,12 @@ case 'akar':{
             break
 			
 case 'kompasnews': {
-            let res = await fetchJson(`https://api.akuari.my.id/info/merdeka`)
+            let res = await fetchJson(`https://api.akuari.my.id/info/kompas`)
             let teks = `⭔ *KOMPAS NEWS*\n\n`
             for (let i of res.result) {
             teks += `⭔ Judul : ${i.title}\n`
 			teks += `⭔ Tanggal Upload : ${i.date}\n`
-			teks += `⭔ Label : ${i.Label}\n`
+			teks += `⭔ Label : ${i.label}\n`
 			teks += `⭔ Link : ${i.link}\n`
             teks += `⭔ Gambar : ${i.image}\n\n\n──────────────────────\n`
             }
@@ -2274,7 +2282,7 @@ case 'liputan6': {
             for (let i of res.result) {
             teks += `⭔ Judul : ${i.title}\n`
 			teks += `⭔ Tanggal Upload : ${i.date}\n`
-			teks += `⭔ Label : ${i.Label}\n`
+			teks += `⭔ Label : ${i.label}\n`
 			teks += `⭔ Deskripsi : ${i.description}\n`
 			teks += `⭔ Link : ${i.link}\n`
             teks += `⭔ Gambar : ${i.image}\n\n\n──────────────────────\n`
@@ -2285,7 +2293,7 @@ case 'liputan6': {
 			
 case 'turnbackhoax': {
             let res = await fetchJson(`https://api.akuari.my.id/info/turnbackhoax`)
-            let teks = `⭔ *KOMPAS NEWS*\n\n`
+            let teks = `⭔ *TURN BACK HOAX*\n\n`
             for (let i of res.result) {
             teks += `⭔ Judul : ${i.title}\n`
 			teks += `⭔ Tanggal Upload : ${i.date}\n`
