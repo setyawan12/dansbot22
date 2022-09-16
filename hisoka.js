@@ -2133,6 +2133,181 @@ break
 			//////////////////////////////end sistem
 			
 			///////////////free
+			
+			case 'sfile': {
+			if (!text) return reply(`Example : ${prefix + command} joox`)
+            let res = await fetchJson(`https://api.akuari.my.id/search/sfilesearch?query=${text}`)
+            let teks = `⭔ *SFILE SEARCH*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Nama : ${i.nama}\n`
+			teks += `⭔ Ukuran : ${i.size}\n`
+            teks += `⭔ Link : ${i.link}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'carigc': {
+			if (!text) return reply(`Example : ${prefix + command} bot`)
+            let res = await fetchJson(`https://api.akuari.my.id/search/carigc?query=${text}`)
+            let teks = `⭔ *CARI GC WHATSAPP*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Nama : ${i.nama}\n`
+            teks += `⭔ Link : ${i.link}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+			
+///////////////asupan
+hisoka.sendFileUrl(m.chat, media, `Download Url Instagram From ${isUrl(text)[0]}`, m)
+
+case 'bocil':
+case 'ukhty':
+case 'ghea':
+case 'santuy':
+          try {
+			anu = await fetchJson(`https://api.akuari.my.id/asupan/${command}`)
+			hisoka.sendFileUrl(m.chat, anu.respon, `Nih Kak`, m)
+          } catch {
+            m.reply(`Yah... Ada Yang Error Nih.`)
+          }
+          break
+		  
+////////////////////////////education
+
+case 'bagi':{
+				if (!text) return reply(`Example : ${prefix + command} 10:2`)
+				let [teks1, teks2] = text.split`|`
+				if (!teks1) return reply(`Example : ${prefix + command} 10:2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10:2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/bagi?angka1=${teks1}&angka2=${teks2}`)
+				teks122 = `*PEMBAGIAN*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+				
+			}
+			break
+			
+case 'tambah':{
+				if (!text) return reply(`Example : ${prefix + command} 10+2`)
+				let [teks1, teks2] = text.split`+`
+				if (!teks1) return reply(`Example : ${prefix + command} 10+2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10+2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/tambah?angka1=${teks1}&angka2=${teks2}`)
+				teks122 = `*PENJUMLAHAN*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+				
+			}
+			break
+			
+case 'kali':{
+				if (!text) return reply(`Example : ${prefix + command} 10x2`)
+				let [teks1, teks2] = text.split`x`
+				if (!teks1) return reply(`Example : ${prefix + command} 10x2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10x2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/kali?angka1=${teks1}&angka2=${teks2}`)
+				teks122 = `*PERKALIAN*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+				
+			}
+			break
+			
+case 'kurang':{
+				if (!text) return reply(`Example : ${prefix + command} 10-2`)
+				let [teks1, teks2] = text.split`-`
+				if (!teks1) return reply(`Example : ${prefix + command} 10-2`)
+				if (!teks2) return reply(`Example : ${prefix + command} 10-2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/kurang?angka1=${teks1}&angka2=${teks2}`)
+				teks122 = `*PENGURANGAN*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+			break
+			
+case 'pangkat':{
+				if (!text) return reply(`Example : ${prefix + command} 10 2`)
+				if (!args[0]) return reply(`Example : ${prefix + command} 10 2`)
+				if (!args[1]) return reply(`Example : ${prefix + command} 10 2`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/pangkat?angka=${args[0]}&pangkat=${args[1]}`)
+				teks122 = `*PANGKAT*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+			break
+
+case 'akar':{
+				if (!text) return reply(`Example : ${prefix + command} 25`)
+				const a = await fetchJson(`https://api.akuari.my.id/edukasi/akar?angka=${text}`)
+				teks122 = `*AKAR KUADRAT*\n\n${a.soal}\n=${a.hasil}`
+				reply(teks122)
+			break
+			
+			case 'merdekanews': {
+            let res = await fetchJson(`https://api.akuari.my.id/info/merdeka`)
+            let teks = `⭔ *MERDEKA NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.upload_date}\n`
+			teks += `⭔ Link : ${i.link}\n`
+            teks += `⭔ Thumbnail : ${i.thumb}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'kompasnews': {
+            let res = await fetchJson(`https://api.akuari.my.id/info/merdeka`)
+            let teks = `⭔ *KOMPAS NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.date}\n`
+			teks += `⭔ Label : ${i.Label}\n`
+			teks += `⭔ Link : ${i.link}\n`
+            teks += `⭔ Gambar : ${i.image}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'liputan6': {
+            let res = await fetchJson(`https://api.akuari.my.id/info/liputan6`)
+            let teks = `⭔ *LIPUTAN 6 NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.date}\n`
+			teks += `⭔ Label : ${i.Label}\n`
+			teks += `⭔ Deskripsi : ${i.description}\n`
+			teks += `⭔ Link : ${i.link}\n`
+            teks += `⭔ Gambar : ${i.image}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'turnbackhoax': {
+            let res = await fetchJson(`https://api.akuari.my.id/info/turnbackhoax`)
+            let teks = `⭔ *KOMPAS NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.date}\n`
+			teks += `⭔ Deskripsi : ${i.desc}\n`
+			teks += `⭔ Link : ${i.link}\n`
+            teks += `⭔ Gambar : ${i.img}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'kumparan': {
+            let res = await fetchJson(`https://api.lolhuman.xyz/api/kumparan?apikey=${lolapi}`)
+            let teks = `⭔ *KUMPARAN NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.publish}\n`
+			teks += `⭔ Kategori : ${i.category}\n`
+			teks += `⭔ Deskripsi : ${i.desc}\n`
+            teks += `⭔ Link : ${i.link}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
 			case 'heker2': {
                 m.reply(`Memproses...`)
 		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
@@ -3975,6 +4150,7 @@ latensie = speed() - timestampe
 *Owner Number* : ${global.owner[0]}
 *Host Name* : DansBotPC
 *platform* : ${os.platform()}
+*Last Update* : 22:30 16/9/22
 
 *Jam* : ${jam}
 *Hari* : ${week} ${weton}
@@ -4053,13 +4229,36 @@ info? wa.me/${global.owner[0]}
 │⭔ ${prefix}ringtone [query]
 │⭔ ${prefix}stalk [option] [query]
 │⭔ ${prefix}lirik [query]
+│⭔ ${prefix}sfile [query]
+│⭔ ${prefix}carigc [query]
 │
 └───────⭓
 
-┌──⭓ *Information*
+┌──⭓ *Informasi*
 │
 │⭔ ${prefix}kurs
 │⭔ ${prefix}infogempa
+│
+└───────⭓
+
+┌──⭓ *Edukasi*
+│
+│⭔ ${prefix}tambah
+│⭔ ${prefix}kurang
+│⭔ ${prefix}kali
+│⭔ ${prefix}bagi
+│⭔ ${prefix}pangkat
+│⭔ ${prefix}akar
+│
+└───────⭓
+
+┌──⭓ *Berita*
+│
+│⭔ ${prefix}merdekanews
+│⭔ ${prefix}kompasnews
+│⭔ ${prefix}liputan6
+│⭔ ${prefix}turnbackhoax
+│⭔ ${prefix}kumparan
 │
 └───────⭓
 
@@ -4081,6 +4280,18 @@ info? wa.me/${global.owner[0]}
 │⭔ ${prefix}cecan
 │⭔ ${prefix}cogan
 │⭔ ${prefix}cecanhijab
+│
+└───────⭓
+
+┌──⭓ *Asupan*
+│
+│⭔ ${prefix}cecan
+│⭔ ${prefix}cogan
+│⭔ ${prefix}cecanhijab
+│⭔ ${prefix}bocil
+│⭔ ${prefix}ukhty
+│⭔ ${prefix}ghea
+│⭔ ${prefix}santuy
 │
 └───────⭓
 
@@ -4335,7 +4546,11 @@ info? wa.me/${global.owner[0]}
 │⭔ ${prefix}setstatus
 │⭔ ${prefix}setnamebot
 │
-└───────⭓`
+└───────⭓
+
+
+Thanks
+➣ DikaArdnt [Github]`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'Instagram',

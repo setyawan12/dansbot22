@@ -1263,13 +1263,18 @@ break
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Instsgram',
+                                    displayText: 'Instagram',
                                     url: 'https://instagram.com/afs_bot'
                                 }
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 88'
+                                    phoneNumber: '+79772977134'
+                                }
+                            },{
+                                quickReplyButton: {
+                                    displayText: 'Menu Bot',
+                                    id: 'menu'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -2128,6 +2133,75 @@ break
 			//////////////////////////////end sistem
 			
 			///////////////free
+			case 'merdekanews': {
+            let res = await fetchJson(`https://api.akuari.my.id/info/merdeka`)
+            let teks = `⭔ *MERDEKA NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.upload_date}\n`
+			teks += `⭔ Link : ${i.link}\n`
+            teks += `⭔ Thumbnail : ${i.thumb}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'kompasnews': {
+            let res = await fetchJson(`https://api.akuari.my.id/info/merdeka`)
+            let teks = `⭔ *KOMPAS NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.date}\n`
+			teks += `⭔ Label : ${i.Label}\n`
+			teks += `⭔ Link : ${i.link}\n`
+            teks += `⭔ Gambar : ${i.image}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'liputan6': {
+            let res = await fetchJson(`https://api.akuari.my.id/info/liputan6`)
+            let teks = `⭔ *LIPUTAN 6 NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.date}\n`
+			teks += `⭔ Label : ${i.Label}\n`
+			teks += `⭔ Deskripsi : ${i.description}\n`
+			teks += `⭔ Link : ${i.link}\n`
+            teks += `⭔ Gambar : ${i.image}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'turnbackhoax': {
+            let res = await fetchJson(`https://api.akuari.my.id/info/turnbackhoax`)
+            let teks = `⭔ *KOMPAS NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.date}\n`
+			teks += `⭔ Deskripsi : ${i.desc}\n`
+			teks += `⭔ Link : ${i.link}\n`
+            teks += `⭔ Gambar : ${i.img}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
+			
+case 'kumparan': {
+            let res = await fetchJson(`https://api.lolhuman.xyz/api/kumparan?apikey=${lolapi}`)
+            let teks = `⭔ *KUMPARAN NEWS*\n\n`
+            for (let i of res.result) {
+            teks += `⭔ Judul : ${i.title}\n`
+			teks += `⭔ Tanggal Upload : ${i.publish}\n`
+			teks += `⭔ Kategori : ${i.category}\n`
+			teks += `⭔ Deskripsi : ${i.desc}\n`
+            teks += `⭔ Link : ${i.link}\n\n\n──────────────────────\n`
+            }
+            m.reply(teks)
+            }
+            break
 			case 'heker2': {
                 m.reply(`Memproses...`)
 		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
@@ -3970,6 +4044,7 @@ latensie = speed() - timestampe
 *Owner Number* : ${global.owner[0]}
 *Host Name* : DansBotPC
 *platform* : ${os.platform()}
+*Last Update* : 22:30 16/9/22
 
 *Jam* : ${jam}
 *Hari* : ${week} ${weton}
@@ -4048,13 +4123,36 @@ info? wa.me/${global.owner[0]}
 │⭔ ${prefix}ringtone [query]
 │⭔ ${prefix}stalk [option] [query]
 │⭔ ${prefix}lirik [query]
+│⭔ ${prefix}sfile [query]
+│⭔ ${prefix}carigc [query]
 │
 └───────⭓
 
-┌──⭓ *Information*
+┌──⭓ *Informasi*
 │
 │⭔ ${prefix}kurs
 │⭔ ${prefix}infogempa
+│
+└───────⭓
+
+┌──⭓ *Edukasi*
+│
+│⭔ ${prefix}tambah
+│⭔ ${prefix}kurang
+│⭔ ${prefix}kali
+│⭔ ${prefix}bagi
+│⭔ ${prefix}pangkat
+│⭔ ${prefix}akar
+│
+└───────⭓
+
+┌──⭓ *Berita*
+│
+│⭔ ${prefix}merdekanews
+│⭔ ${prefix}kompasnews
+│⭔ ${prefix}liputan6
+│⭔ ${prefix}turnbackhoax
+│⭔ ${prefix}kumparan
 │
 └───────⭓
 
@@ -4076,6 +4174,18 @@ info? wa.me/${global.owner[0]}
 │⭔ ${prefix}cecan
 │⭔ ${prefix}cogan
 │⭔ ${prefix}cecanhijab
+│
+└───────⭓
+
+┌──⭓ *Asupan*
+│
+│⭔ ${prefix}cecan
+│⭔ ${prefix}cogan
+│⭔ ${prefix}cecanhijab
+│⭔ ${prefix}bocil
+│⭔ ${prefix}ukhty
+│⭔ ${prefix}ghea
+│⭔ ${prefix}santuy
 │
 └───────⭓
 
@@ -4330,7 +4440,11 @@ info? wa.me/${global.owner[0]}
 │⭔ ${prefix}setstatus
 │⭔ ${prefix}setnamebot
 │
-└───────⭓`
+└───────⭓
+
+
+Thanks
+➣ DikaArdnt [Github]`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'Instagram',
