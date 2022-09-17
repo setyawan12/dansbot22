@@ -1389,6 +1389,25 @@ break
 			 case 'patrick':{
 				 
 				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
 			 }
 			 break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
