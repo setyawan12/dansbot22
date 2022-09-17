@@ -21,6 +21,7 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const lolapi = 'ardanfajars'
 const mathjs = require('mathjs')
+const hit = JSON.parse(fs.readFileSync('./database/hit.json'))
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins, isbloke } = require('./lib/myfunc')
 
 // read database
@@ -129,6 +130,11 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
             hisoka.readMessages([m.key])
             console.log(chalk.black(chalk.bgWhite('[ PESAN ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> Dari'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> Di'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
         }
+		///dns
+		if (isCmd) {
+			hit.push(command2)
+			fs.writeFileSync('./hit.json', JSON.stringify(hit))
+		}
 	//timessss
 	
 	const time2a = moment().tz("Asia/Jakarta").format("HH:mm:ss");
@@ -4160,6 +4166,7 @@ latensie = speed() - timestampe
 *Owner Number* : ${global.owner[0]}
 *Host Name* : DansBotPC
 *platform* : ${os.platform()}
+*Hit* : ${hit.length}
 *Last Update* : 22:30 16/9/22
 
 *Jam* : ${jam}
