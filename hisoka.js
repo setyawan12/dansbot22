@@ -1386,6 +1386,11 @@ break
                     hisoka.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
+			 case 'patrick':{
+				 
+				 let encmedia = await hisoka.sendImageAsSticker(m.chat, `https://zenzapis.xyz/randomimage/patrick?apikey=Urbaeexyz`, m, { packname: global.packname, author: global.author })
+			 }
+			 break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
            if (/image/.test(mime)) {
            m.reply(mess.wait)
