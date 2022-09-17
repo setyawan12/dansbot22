@@ -132,7 +132,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         }
 		///dns
 		if (isCmd) {
-			hit.push(command2)
+			hit.push(command)
 			fs.writeFileSync('./hit.json', JSON.stringify(hit))
 		}
 	//timessss
