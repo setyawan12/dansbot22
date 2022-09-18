@@ -169,6 +169,11 @@ let datexxx = dhate.toLocaleDateString(locale, {
   month: "numeric",
   year: "numeric",
 });
+let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(d)
 let gmt = new Date(0).getTime() - new Date("1 January 1970").getTime();
 let week = dhate.toLocaleDateString(locale, { weekday: "long" });
 let weton = ["Pahing", "Pon", "Wage", "Kliwon", "Legi"][
