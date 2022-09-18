@@ -22,6 +22,7 @@ const primbon = new Primbon()
 const lolapi = 'ardanfajars'
 const mathjs = require('mathjs')
 const hit = JSON.parse(fs.readFileSync('./database/hit.json'))
+let prem = JSON.parse(fs.readFileSync('./database/prem.json'))
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins, isbloke } = require('./lib/myfunc')
 
 // read database
@@ -55,6 +56,9 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         const mime = (quoted.msg || quoted).mimetype || ''
         const qmsg = (quoted.msg || quoted)
         const isMedia = /image|video|sticker|audio/.test(mime)
+		const premuser = prem.includes(userid) ? 'Premium' : 'Free User'
+		const pengirim = sender.id
+		const isPrem = prem.includes(pengirim)
 	
         // Group
         const groupMetadata = m.isGroup ? await hisoka.groupMetadata(m.chat).catch(e => {}) : ''
@@ -2122,6 +2126,58 @@ break
 			//////////////////////////////end
 			
 			/////////persisteman
+			case 'addprem':
+					if (!isCreator) return reply(`Hanya Owner Bot`)
+					if (text) {
+						var yupi = text + '@c.us'
+						var jumlahprem = prem.length
+						if (prem.includes(yupi)) return reply('Nomor ini sudah ada didalam database')
+						prem.push(yupi)
+						fs.writeFileSync('./database/prem.json', JSON.stringify(prem))
+						reply(`Berhasil menambahkan ${args[0]} menjadi user premium\nJumlah didalam database: ${jumlahprem}`)
+					} else if (quotedMsgObj) {
+						var qtmgs = quotedMsgObj.sender.id
+						var jumlahprem = prem.length
+						if (prem.includes(qtmgs)) return reply('Nomor ini sudah ada didalam database sebelumnya')
+						prem.push(qtmgs)
+						fs.writeFileSync('./database/prem.json', JSON.stringify(prem))
+						reply(`Berhasil menambahkan ${quotedMsgObj.sender.pushname} menjadi user Premium\nJumlah didalam database: ${jumlahprem}`)
+					} else {
+						reply('Format pesan salah')
+					}
+					break
+			
+case 'delprem':
+					if (!isCreator) return reply(`Hanya Owner Bot`)
+					if (text) {
+						var yusplice = text + '@c.us'
+						var reguy = prem.indexOf(yusplice)
+						var jumlahprem = prem.length
+						prem.splice(reguy, 1)
+						fs.writeFileSync('./database/prem.json', JSON.stringify(prem))
+						reply(`Berhasil menghapus ${yusplice} dari Premium menjadi Regular\nJumlah didalam database: ${jumlahprem}`)
+					} else if (quotedMsgObj) {
+						var iduser = quotedMsgObj.sender.id
+						var incheck = prem.indexOf(iduser)
+						var jumlahprem = prem.length
+						prem.splice(incheck, 1)
+						fs.writeFileSync('./database/prem.json', JSON.stringify(prem))
+						reply( `Berhasil menghapus ${quotedMsgObj.sender.pushname} dari Premium menjadi Regular\nJumlah didalam database: ${jumlahprem}`)
+					} else {
+						reply( 'format pesan salah')
+					}
+					break
+
+case 'premlist':
+					const premlist = prem
+					let kuntul = `╔══✪〘 *Prem Member!* 〙✪══\n╠➥Total Premium user : ${prem.length}\n`
+					for (let i = 0; i < premlist.length; i++) {
+						kuntul += `╠➥`
+						kuntul += `${premlist[i].replace(/@c.us/g, '')}\n`
+					}
+					kuntul += '╚═〘 *DANS BOT* 〙'
+					await reply(kuntul)
+					break
 			case 'ceklimit':{
 				reply(`Limit Command : ${global.db.data.users[m.sender].limit}\nLimit Kirim : ${global.db.data.users[m.sender].limits}`)
 				
@@ -4214,12 +4270,17 @@ latensie = speed() - timestampe
 *platform* : ${os.platform()}
 *Hit* : ${hit.length}
 *Last Update* : 15:06 18/9/22
-
+Limit Command : ${global.db.data.users[m.sender].limit}
 *Jam* : ${jam}
 *Hari* : ${week} ${weton}
 *Tanggal* : ${datex}
 *Tanggal Hijriyah* : ${dateIslamic}
 Donasi Yuk https://saweria.co/ardhans
+
+ 「 INFO USER 」
+*Limit :* ${global.db.data.users[m.sender].limit}
+
+
 ┗━━✨━━━━━━━━━━━━━┛
 
 ┏━━━━━━━━━━━━━✨━━┓
