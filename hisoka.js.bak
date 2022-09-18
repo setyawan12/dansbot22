@@ -4279,6 +4279,7 @@ Donasi Yuk https://saweria.co/ardhans
 
  「 INFO USER 」
 *Limit :* ${global.db.data.users[m.sender].limit}
+*Status User :* ${premuser} 
 
 
 ┗━━✨━━━━━━━━━━━━━┛

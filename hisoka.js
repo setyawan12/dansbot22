@@ -56,7 +56,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         const mime = (quoted.msg || quoted).mimetype || ''
         const qmsg = (quoted.msg || quoted)
         const isMedia = /image|video|sticker|audio/.test(mime)
-		const premuser = prem.includes(userid) ? 'Premium' : 'Free User'
+		const premuser = prem.includes(sender.id) ? 'Premium' : 'Free User'
 		const pengirim = sender.id
 		const isPrem = prem.includes(pengirim)
 	
