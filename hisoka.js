@@ -169,6 +169,7 @@ let datexxx = dhate.toLocaleDateString(locale, {
   month: "numeric",
   year: "numeric",
 });
+let d = new Date(new Date + 3600000)
 let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
       day: 'numeric',
       month: 'long',
