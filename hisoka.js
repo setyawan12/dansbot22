@@ -4213,11 +4213,12 @@ latensie = speed() - timestampe
 *Host Name* : DansBotPC
 *platform* : ${os.platform()}
 *Hit* : ${hit.length}
-*Last Update* : 22:30 16/9/22
+*Last Update* : 15:06 18/9/22
 
 *Jam* : ${jam}
 *Hari* : ${week} ${weton}
 *Tanggal* : ${datex}
+*Tanggal Hijriyah* : ${dateIslamic}
 Donasi Yuk https://saweria.co/ardhans
 ┗━━✨━━━━━━━━━━━━━┛
 
