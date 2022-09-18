@@ -56,8 +56,8 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         const mime = (quoted.msg || quoted).mimetype || ''
         const qmsg = (quoted.msg || quoted)
         const isMedia = /image|video|sticker|audio/.test(mime)
-		const premuser = prem.includes(sender.id) ? 'Premium' : 'Free User'
-		const pengirim = sender.id
+		const premuser = prem.includes(m.sender) ? 'Premium' : 'Free User'
+		const pengirim = m.sender
 		const isPrem = prem.includes(pengirim)
 	
         // Group
@@ -2136,7 +2136,7 @@ break
 						fs.writeFileSync('./database/prem.json', JSON.stringify(prem))
 						reply(`Berhasil menambahkan ${args[0]} menjadi user premium\nJumlah didalam database: ${jumlahprem}`)
 					} else if (quotedMsgObj) {
-						var qtmgs = quotedMsgObj.sender.id
+						var qtmgs = quotedMsgObj.m.sender
 						var jumlahprem = prem.length
 						if (prem.includes(qtmgs)) return reply('Nomor ini sudah ada didalam database sebelumnya')
 						prem.push(qtmgs)
@@ -2157,7 +2157,7 @@ case 'delprem':
 						fs.writeFileSync('./database/prem.json', JSON.stringify(prem))
 						reply(`Berhasil menghapus ${yusplice} dari Premium menjadi Regular\nJumlah didalam database: ${jumlahprem}`)
 					} else if (quotedMsgObj) {
-						var iduser = quotedMsgObj.sender.id
+						var iduser = quotedMsgObj.m.sender
 						var incheck = prem.indexOf(iduser)
 						var jumlahprem = prem.length
 						prem.splice(incheck, 1)
